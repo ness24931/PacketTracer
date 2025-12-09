@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BussinessLogic/BussinessLogic.csproj" />
+  <Project Path="DataAccess/DataAccess.csproj" />
+  <Project Path="Entity/Entity.csproj" />
+  <Project Path="PacketTracer/PacketTracer.csproj" />
+</Solution>

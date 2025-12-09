@@ -1,0 +1,62 @@
+﻿@page "/track"
+@using BussinessLogic.Management
+@using Entity.Manager
+@inject PackageService PackageService
+@rendermode InteractiveServer
+
+<h3>Seguimiento de su paquete</h3>
+
+<div class="d-flex flex-row mb-4">
+    <input @bind="trackingNumber" placeholder="Enter tracking number" class="form-control" />
+    <button class="btn btn-primary" @onclick="Lookup">Consultar</button>
+</div>
+
+@if (isSearching)
+{
+    <p>Buscando…</p>
+}
+@if (error is not null)
+{
+    <div class="alert alert-danger">@error</div>
+}
+
+@if (package is not null)
+{
+    <div class="card">
+        <div class="card-body">
+            <h5>@package.Carrier — @package.TrackingNumber</h5>
+            <p><strong>Status:</strong> @package.Status</p>
+            <p><strong>Factura:</strong> @package.Recipient</p>
+            <p><small>Última actualización: @package.CreatedAt.ToLocalTime().ToString("g")</small></p>
+        </div>
+    </div>
+}
+
+@code {
+    private string trackingNumber = "";
+    private PackageDTO? package;
+    private bool isSearching = false;
+    private string? error;
+
+    private async Task Lookup()
+    {
+        error = null;
+        package = null;
+        if (string.IsNullOrWhiteSpace(trackingNumber))
+        {
+            error = "Please enter a tracking number.";
+            return;
+        }
+        isSearching = true;
+        try
+        {
+            package = await PackageService.GetByTracking(trackingNumber.Trim());
+            if (package == null) error = "Tracking number not found.";
+        }
+        catch (Exception ex)
+        {
+            error = "Error searching: " + ex.Message;
+        }
+        finally { isSearching = false; }
+    }
+}

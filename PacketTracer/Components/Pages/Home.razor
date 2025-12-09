@@ -1,0 +1,33 @@
+﻿@page "/"
+
+<div class="landing-hero text-center text-black d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Rastrea tus paquetes fácilmente</h1>
+        <p class="lead mt-3 mb-4">
+            Rastrea envíos de Amazon, eBay, AliExpress, Shein y más, todo en un solo lugar.
+        </p>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Marcas populares</h2>
+
+    <div class="row text-center g-4">
+        @foreach (var brand in Brands)
+        {
+            <div class="col-6 col-md-6">
+                <div class="border rounded-3 p-3 bg-light shadow-sm fw-semibold">
+                    @brand
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private readonly List<string> Brands = new()
+    {
+        "Amazon", "eBay", "AliExpress", "Walmart",
+        "Shein", "Wish"
+    };
+}
