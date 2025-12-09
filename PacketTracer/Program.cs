@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<DataAccess.Management.PackageDA>();
 builder.Services.AddScoped<BussinessLogic.Management.PackageService>();
 
-builder.WebHost.UseUrls("http://0.0.0.0:10000");
+//builder.WebHost.UseUrls("http://0.0.0.0:10000");
 
 var app = builder.Build();
 
