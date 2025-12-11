@@ -1,0 +1,25 @@
+{
+  "name": "packettracer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./Styles/tailwind.css -o wwwroot/css/tailwind.css --minify --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ness24931/PacketTracer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ness24931/PacketTracer/issues"
+  },
+  "homepage": "https://github.com/ness24931/PacketTracer#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.17"
+  }
+}

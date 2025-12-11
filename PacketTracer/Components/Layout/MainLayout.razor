@@ -2,15 +2,17 @@
 
 <NavMenu />
 
-<div class="page">
-    <main class="d-flex align-content-center justify-content-center">
-        <article class="content px-4">
+<div class="page d-flex flex-column min-vh-100">
+
+    <main class="flex-fill d-flex justify-content-center align-items-start py-3">
+        <article class="content px-4 w-100" style="max-width: 900px;">
             @Body
         </article>
     </main>
+
 </div>
 
-<div id="blazor-error-ui" data-nosnippet>
+<div id="blazor-error-ui">
     An unhandled error has occurred.
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>

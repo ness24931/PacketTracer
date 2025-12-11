@@ -1,0 +1,36 @@
+﻿@page "/login"
+
+<div class="d-flex justify-content-center bg-light">
+    <div class="card shadow-lg p-4 w-100 mw-[380px] bg-red-50" style="border-radius: 1rem;">
+
+        <h3 class="text-center mb-3 fw-bold">Welcome Back</h3>
+        <p class="text-center text-muted">Sign in to continue</p>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Email</label>
+            <input type="email" class="form-control p-2" placeholder="you@example.com" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Password</label>
+            <input type="password" class="form-control p-2" placeholder="••••••••" />
+        </div>
+
+        <button class="btn btn-primary w-100 mt-2 p-2 fw-semibold">
+            Login
+        </button>
+
+        <div class="text-center mt-3">
+            <a href="#" class="text-decoration-none">Forgot your password?</a>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="text-center text-muted" style="font-size: 0.9rem;">
+            © 2025 PacketTracer — Track packages easily
+        </div>
+
+    </div>
+</div>
+
+    @* "build": "@tailwindcss/cli -i ./Styles/input.css -o ./wwwroot/css/output.css --minify --watch" *@
